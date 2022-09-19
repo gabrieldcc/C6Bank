@@ -20,8 +20,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gS7-qF-VDT">
                                 <rect key="frame" x="0.0" y="80" width="414" height="1120"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wj1-Ux-4Me" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wj1-Ux-4Me" userLabel="Content View">
+                                        <rect key="frame" x="-6" y="-18" width="414" height="1200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-Cg-9rU">
                                                 <rect key="frame" x="87" y="993" width="240" height="128"/>
@@ -98,26 +98,30 @@
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.243,61" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GM-dx-1dN">
-                                                                <rect key="frame" x="39.5" y="42" width="102" height="26.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25.502.63" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-w7-JtQ">
+                                                                <rect key="frame" x="39.5" y="40" width="200" height="30.5"/>
+                                                                <color key="backgroundColor" white="0.1736819728" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="200" id="tp4-3d-eoV"/>
+                                                                </constraints>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.17368197278911565" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="Dfi-r1-JKb" firstAttribute="leading" secondItem="QeL-2G-8XY" secondAttribute="trailing" constant="10" id="1YR-Kj-XYu"/>
                                                             <constraint firstItem="Dfi-r1-JKb" firstAttribute="centerY" secondItem="QeL-2G-8XY" secondAttribute="centerY" id="4ut-3F-6Vn"/>
                                                             <constraint firstItem="2e1-fG-EeQ" firstAttribute="top" secondItem="s10-rH-E7V" secondAttribute="bottom" constant="16" id="EdN-o2-5qD"/>
-                                                            <constraint firstItem="5GM-dx-1dN" firstAttribute="leading" secondItem="2e1-fG-EeQ" secondAttribute="trailing" constant="8" id="JV2-9A-Gkl"/>
-                                                            <constraint firstItem="5GM-dx-1dN" firstAttribute="centerY" secondItem="2e1-fG-EeQ" secondAttribute="centerY" id="TSc-A5-MWV"/>
                                                             <constraint firstItem="2e1-fG-EeQ" firstAttribute="leading" secondItem="Zvw-zP-ER9" secondAttribute="leading" constant="16" id="VQc-gD-PE4"/>
+                                                            <constraint firstItem="fm9-w7-JtQ" firstAttribute="leading" secondItem="2e1-fG-EeQ" secondAttribute="trailing" constant="8" id="am5-wt-RQf"/>
                                                             <constraint firstAttribute="bottom" secondItem="rdp-lO-QCW" secondAttribute="bottom" id="awt-fz-MFS"/>
                                                             <constraint firstItem="rdp-lO-QCW" firstAttribute="leading" secondItem="Zvw-zP-ER9" secondAttribute="leading" id="b6W-K2-95l"/>
                                                             <constraint firstAttribute="trailing" secondItem="rdp-lO-QCW" secondAttribute="trailing" id="cAw-w1-Zzt"/>
                                                             <constraint firstItem="s10-rH-E7V" firstAttribute="leading" secondItem="Zvw-zP-ER9" secondAttribute="leading" constant="16" id="q1L-FN-20x"/>
                                                             <constraint firstItem="s10-rH-E7V" firstAttribute="top" secondItem="Zvw-zP-ER9" secondAttribute="top" constant="16" id="sZN-qi-QPK"/>
+                                                            <constraint firstItem="fm9-w7-JtQ" firstAttribute="centerY" secondItem="2e1-fG-EeQ" secondAttribute="centerY" id="zhw-5T-Dv1"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -392,6 +396,9 @@
                                             <imageReference key="image" image="eye.fill" catalog="system" symbolScale="medium"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="eyeShowData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xkh-qm-cUQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1N-R2-IBD">
                                         <rect key="frame" x="358" y="8" width="40" height="40"/>
@@ -437,7 +444,9 @@
                         <outlet property="brazilImageContentView" destination="s10-rH-E7V" id="yNL-jM-WE4"/>
                         <outlet property="depositarImage" destination="2th-Ac-Sev" id="bML-iC-GQl"/>
                         <outlet property="pagarImage" destination="8kt-3U-Fby" id="woE-VW-iey"/>
+                        <outlet property="saldoButton" destination="X10-4F-KqA" id="jrx-kD-OHU"/>
                         <outlet property="saldoContentView" destination="Es5-IJ-h8B" id="sva-lS-aiB"/>
+                        <outlet property="saldoTextField" destination="fm9-w7-JtQ" id="LV3-TJ-yeH"/>
                         <outlet property="todosContentView" destination="Dhf-GM-xX7" id="Zas-h4-p0F"/>
                         <outlet property="transferirImage" destination="vTt-aZ-4fM" id="7do-bl-6ly"/>
                         <outlet property="userButton" destination="u1N-R2-IBD" id="oXx-ZR-ghN"/>
