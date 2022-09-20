@@ -14,36 +14,23 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundedUpViews()
         turnViewIntoCircle()
         saldoTextField.isUserInteractionEnabled = false
-        
+        roundUpViews()
         if(showBalance == true) {
             saldoTextField.isSecureTextEntry = true
             setupEyeShowDataButtonImage()
             showBalance.toggle()
         }
-        
-        for contentImage in horizontalStackImages {
-            contentImage.layer.cornerRadius = 10
-            contentImage.layer.masksToBounds = true
-        }
     }
     
-    //TODO: = Arrumar o arredondamento das views no lugar das images
     //MARK: - IBOutlets
     @IBOutlet weak private var saldoButton: UIButton!
     @IBOutlet weak private var saldoTextField: UITextField!
-    @IBOutlet weak private var saldoContentView: UIView!
-    @IBOutlet weak private var depositarImageContentView: UIView!
-    @IBOutlet weak private var transferirImageContentView: UIView!
-    @IBOutlet weak private var pagarImageContentView: UIView!
-    @IBOutlet weak private var verExtratoImageContentView: UIView!
     @IBOutlet weak private var brazilImageContentView: UIView!
     @IBOutlet weak private var userButton: UIButton!
-    @IBOutlet weak private var todosContentView: UIView!
-    
     @IBOutlet var horizontalStackImages: [UIView]!
+    
     //MARK: - IBActions
     @IBAction func saldoButton(_ sender: Any) {
         
@@ -68,18 +55,11 @@ final class ViewController: UIViewController {
         saldoButton.setImage(image, for: .normal)
     }
     
-    private func roundedUpViews() {
-        roundUpView(view: saldoContentView)
-        roundUpView(view: verExtratoImageContentView)
-        roundUpView(view: pagarImageContentView)
-        roundUpView(view: depositarImageContentView)
-        roundUpView(view: transferirImageContentView)
-        roundUpView(view: todosContentView)
-    }
-    
-    private func roundUpView(view: UIView) {
-        view.layer.cornerRadius = 10
-        view.layer.masksToBounds = true
+    private func roundUpViews() {
+        for contentImage in horizontalStackImages {
+            contentImage.layer.cornerRadius = 10
+            contentImage.layer.masksToBounds = true
+        }
     }
     
     private func turnViewIntoCircle() {
