@@ -23,26 +23,33 @@ final class ViewController: UIViewController {
             setupEyeShowDataButtonImage()
             showBalance.toggle()
         }
+        
+        for contentImage in horizontalStackImages {
+            contentImage.layer.cornerRadius = 10
+            contentImage.layer.masksToBounds = true
+        }
     }
     
+    //TODO: = Arrumar o arredondamento das views no lugar das images
     //MARK: - IBOutlets
-    @IBOutlet weak var saldoButton: UIButton!
-    @IBOutlet weak var saldoTextField: UITextField!
-    @IBOutlet weak var saldoContentView: UIView!
-    @IBOutlet weak var verExtratoImage: UIImageView!
-    @IBOutlet weak var pagarImage: UIImageView!
-    @IBOutlet weak var depositarImage: UIImageView!
-    @IBOutlet weak var transferirImage: UIImageView!
-    @IBOutlet weak var brazilImageContentView: UIView!
-    @IBOutlet weak var userButton: UIButton!
-    @IBOutlet weak var todosContentView: UIView!
+    @IBOutlet weak private var saldoButton: UIButton!
+    @IBOutlet weak private var saldoTextField: UITextField!
+    @IBOutlet weak private var saldoContentView: UIView!
+    @IBOutlet weak private var depositarImageContentView: UIView!
+    @IBOutlet weak private var transferirImageContentView: UIView!
+    @IBOutlet weak private var pagarImageContentView: UIView!
+    @IBOutlet weak private var verExtratoImageContentView: UIView!
+    @IBOutlet weak private var brazilImageContentView: UIView!
+    @IBOutlet weak private var userButton: UIButton!
+    @IBOutlet weak private var todosContentView: UIView!
     
+    @IBOutlet var horizontalStackImages: [UIView]!
     //MARK: - IBActions
     @IBAction func saldoButton(_ sender: Any) {
         
     }
     
-    @IBAction func eyeShowData(_ sender: Any) {
+    @IBAction func eyeButton(_ sender: Any) {
         if(showBalance == true) {
             saldoTextField.isSecureTextEntry = true
             setupEyeShowDataButtonImage()
@@ -63,10 +70,10 @@ final class ViewController: UIViewController {
     
     private func roundedUpViews() {
         roundUpView(view: saldoContentView)
-        roundUpView(view: verExtratoImage)
-        roundUpView(view: pagarImage)
-        roundUpView(view: depositarImage)
-        roundUpView(view: transferirImage)
+        roundUpView(view: verExtratoImageContentView)
+        roundUpView(view: pagarImageContentView)
+        roundUpView(view: depositarImageContentView)
+        roundUpView(view: transferirImageContentView)
         roundUpView(view: todosContentView)
     }
     
