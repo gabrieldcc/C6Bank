@@ -17,6 +17,7 @@
 		6512BB4428D8A45E00F2E9B3 /* C6BankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512BB4328D8A45E00F2E9B3 /* C6BankTests.swift */; };
 		6512BB4E28D8A45E00F2E9B3 /* C6BankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512BB4D28D8A45E00F2E9B3 /* C6BankUITests.swift */; };
 		6512BB5028D8A45E00F2E9B3 /* C6BankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512BB4F28D8A45E00F2E9B3 /* C6BankUITestsLaunchTests.swift */; };
+		6512BB5F28DA2F9300F2E9B3 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512BB5E28DA2F9200F2E9B3 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6512BB4928D8A45E00F2E9B3 /* C6BankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C6BankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6512BB4D28D8A45E00F2E9B3 /* C6BankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C6BankUITests.swift; sourceTree = "<group>"; };
 		6512BB4F28D8A45E00F2E9B3 /* C6BankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C6BankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6512BB5E28DA2F9200F2E9B3 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		6512BB2828D8A45C00F2E9B3 /* C6Bank */ = {
 			isa = PBXGroup;
 			children = (
+				6512BB5D28DA2F8300F2E9B3 /* Extensions */,
 				6512BB2928D8A45C00F2E9B3 /* AppDelegate.swift */,
 				6512BB2B28D8A45C00F2E9B3 /* SceneDelegate.swift */,
 				6512BB2D28D8A45C00F2E9B3 /* ViewController.swift */,
@@ -128,6 +131,14 @@
 				6512BB4F28D8A45E00F2E9B3 /* C6BankUITestsLaunchTests.swift */,
 			);
 			path = C6BankUITests;
+			sourceTree = "<group>";
+		};
+		6512BB5D28DA2F8300F2E9B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6512BB5E28DA2F9200F2E9B3 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				6512BB2E28D8A45C00F2E9B3 /* ViewController.swift in Sources */,
 				6512BB2A28D8A45C00F2E9B3 /* AppDelegate.swift in Sources */,
 				6512BB2C28D8A45C00F2E9B3 /* SceneDelegate.swift in Sources */,
+				6512BB5F28DA2F9300F2E9B3 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

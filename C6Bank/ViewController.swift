@@ -12,25 +12,26 @@ final class ViewController: UIViewController {
     //MARK: - Var
     private var showBalance = true
     
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         turnViewIntoCircle()
+        setShadowViews()
         saldoTextField.isUserInteractionEnabled = false
         roundUpViews()
-        if(showBalance == true) {
-            saldoTextField.isSecureTextEntry = true
-            setupEyeShowDataButtonImage()
-            showBalance.toggle()
-        }
+        setLoginRules()
+        
     }
     
     //MARK: - IBOutlets
+    @IBOutlet weak var blueView: UIView!
     @IBOutlet weak private var saldoButton: UIButton!
     @IBOutlet weak private var saldoTextField: UITextField!
     @IBOutlet weak private var brazilImageContentView: UIView!
     @IBOutlet weak private var userButton: UIButton!
     @IBOutlet var horizontalStackImages: [UIView]!
     
+    @IBOutlet var shadowViews: [UIView]!
     //MARK: - IBActions
     @IBAction func saldoButton(_ sender: Any) {
         
@@ -49,6 +50,14 @@ final class ViewController: UIViewController {
     
     
     //MARK: - Functions
+    private func setLoginRules() {
+        if(showBalance == true) {
+            saldoTextField.isSecureTextEntry = true
+            setupEyeShowDataButtonImage()
+            showBalance.toggle()
+        }
+    }
+    
     private func setupEyeShowDataButtonImage() {
         let imageName = showBalance ? "eye.slash.fill" : "eye.fill"
         let image = UIImage.init(systemName: imageName)?.withRenderingMode(.alwaysTemplate)
@@ -59,6 +68,12 @@ final class ViewController: UIViewController {
         for contentImage in horizontalStackImages {
             contentImage.layer.cornerRadius = 10
             contentImage.layer.masksToBounds = true
+        }
+    }
+    
+    private func setShadowViews() {
+        for shadow in shadowViews {
+            shadow.addShadow()
         }
     }
     
