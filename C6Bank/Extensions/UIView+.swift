@@ -16,7 +16,6 @@ extension UIView {
         layer.shadowRadius = 10
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
-        layer.cornerRadius = 10
     }
     
     
