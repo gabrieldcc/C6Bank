@@ -25,6 +25,7 @@ final class ViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var blueView: UIView!
+    @IBOutlet var softShadow: [UIView]!
     @IBOutlet weak private var saldoButton: UIButton!
     @IBOutlet weak private var saldoTextField: UITextField!
     @IBOutlet weak private var brazilImageContentView: UIView!
@@ -32,6 +33,7 @@ final class ViewController: UIViewController {
     @IBOutlet var horizontalStackImages: [UIView]!
     
     @IBOutlet var shadowViews: [UIView]!
+    @IBOutlet weak var buttonsContentView: UIView!
     //MARK: - IBActions
     @IBAction func saldoButton(_ sender: Any) {
         
@@ -73,7 +75,11 @@ final class ViewController: UIViewController {
     
     private func setShadowViews() {
         for shadow in shadowViews {
-            shadow.addShadow()
+            shadow.addShadow(opacity: 0.3)
+        }
+        
+        for shadow in softShadow {
+            shadow.addShadow(opacity: 0.2)
         }
     }
     
