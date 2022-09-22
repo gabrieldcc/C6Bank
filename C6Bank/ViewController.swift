@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, UITabBarDelegate {
     
     //MARK: - Var
     private var showBalance = true
@@ -32,7 +32,6 @@ final class ViewController: UIViewController {
     @IBOutlet weak private var saldoTextField: UITextField!
     @IBOutlet weak var faturaTextField: UITextField!
     @IBOutlet var securityTextFields: [UITextField]!
-    
     
     //MARK: - IBActions
     @IBAction func saldoButton(_ sender: Any) {
