@@ -24,16 +24,16 @@ final class ViewController: UIViewController {
     }
     
     //MARK: - IBOutlets
-    @IBOutlet weak var blueView: UIView!
     @IBOutlet var softShadow: [UIView]!
     @IBOutlet weak private var saldoButton: UIButton!
-    @IBOutlet weak private var saldoTextField: UITextField!
-    @IBOutlet weak private var brazilImageContentView: UIView!
-    @IBOutlet weak private var userButton: UIButton!
     @IBOutlet var horizontalStackImages: [UIView]!
-    
     @IBOutlet var shadowViews: [UIView]!
-    @IBOutlet weak var buttonsContentView: UIView!
+    @IBOutlet var circleViews: [UIView]!
+    @IBOutlet weak private var saldoTextField: UITextField!
+    @IBOutlet weak var faturaTextField: UITextField!
+    @IBOutlet var securityTextFields: [UITextField]!
+    
+    
     //MARK: - IBActions
     @IBAction func saldoButton(_ sender: Any) {
         
@@ -41,11 +41,10 @@ final class ViewController: UIViewController {
     
     @IBAction func eyeButton(_ sender: Any) {
         if(showBalance == true) {
-            saldoTextField.isSecureTextEntry = true
-            setupEyeShowDataButtonImage()
+            setSecurityTextEntry(true)
+            
         } else {
-            saldoTextField.isSecureTextEntry = false
-            setupEyeShowDataButtonImage()
+            setSecurityTextEntry(false)
         }
         showBalance = !showBalance
     }
@@ -55,6 +54,7 @@ final class ViewController: UIViewController {
     private func setLoginRules() {
         if(showBalance == true) {
             saldoTextField.isSecureTextEntry = true
+            faturaTextField.isSecureTextEntry = true
             setupEyeShowDataButtonImage()
             showBalance.toggle()
         }
@@ -83,13 +83,19 @@ final class ViewController: UIViewController {
         }
     }
     
-    private func turnViewIntoCircle() {
-        brazilImageContentView.layer.cornerRadius = brazilImageContentView.frame.height / 2
-        brazilImageContentView.layer.masksToBounds = true
-        
-        userButton.layer.cornerRadius = userButton.frame.height / 2
-        userButton.layer.masksToBounds = true
+    private func setSecurityTextEntry(_ isSecurity: Bool) {
+        for textfield in securityTextFields {
+            textfield.isSecureTextEntry = isSecurity
+            setupEyeShowDataButtonImage()
+        }
     }
-
+    
+    private func turnViewIntoCircle() {
+        for view in circleViews {
+            view.layer.cornerRadius = view.frame.height / 2
+            view.layer.masksToBounds = true
+        }
+    }
+    
 }
 
