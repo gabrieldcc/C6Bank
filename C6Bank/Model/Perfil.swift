@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Perfil {
+    var section: String
+    var image: [String]
+    var text: [String]
+}

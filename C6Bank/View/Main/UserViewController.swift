@@ -31,7 +31,6 @@ class UserViewController: UIViewController {
      @IBOutlet weak var configuracoesUnderlineView: UIView!
      @IBOutlet weak var divisionView: UIView!
      @IBOutlet weak var userImageContentView: UIView!
-     @IBOutlet weak var userImage: UIImageView!
      @IBOutlet weak var tableView: UITableView!
      
      //MARK: - Functions
@@ -57,7 +56,7 @@ class UserViewController: UIViewController {
          configuracoesList.append(Configuracoes(
              section: "Personalização",
              image: ["c6-config", "bell.fill"],
-             text: ["ícone do app", "Configurar notificações"]))
+             text: ["Ícone do app", "Configurar notificações"]))
          
          configuracoesList.append(Configuracoes(
              section: "Segurança e privacidade",
@@ -71,12 +70,10 @@ class UserViewController: UIViewController {
      }
      
      private func turnViewIntoCircle() {
-         userImageContentView.layer.cornerRadius = userImageContentView.frame.height / 2
-         userImageContentView.layer.masksToBounds = true
+         userImageContentView.turnViewIntoCircle()
      }
      
      private func setConfiguracoesButton() {
-         configuracoesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
          configuracoesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
          perfilUnderlineView.backgroundColor = .black
          perfilButton.titleLabel?.textColor = .lightGray

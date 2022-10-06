@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController, UITabBarDelegate {
+final class ViewController: UIViewController {
     
     //MARK: - Var
     private var showBalance = true
@@ -26,25 +26,25 @@ final class ViewController: UIViewController, UITabBarDelegate {
     }
     
     //MARK: - IBOutlets
-    @IBOutlet weak var exibirButtonImage: UIImageView!
-    @IBOutlet weak var exibirBannerButton: UIButton!
-    @IBOutlet var bannerImages: [UIImageView]!
+    @IBOutlet weak private var exibirButtonImage: UIImageView!
+    @IBOutlet weak private var exibirBannerButton: UIButton!
+    @IBOutlet private var bannerImages: [UIImageView]!
     @IBOutlet weak private var bannersWidthConstraints: NSLayoutConstraint!
     @IBOutlet weak private var bannersHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak private var bannersScrollView: UIScrollView!
     @IBOutlet weak private var bannersContentView: UIView!
-    @IBOutlet var softShadow: [UIView]!
+    @IBOutlet private var softShadow: [UIView]!
     @IBOutlet weak private var saldoButton: UIButton!
-    @IBOutlet var horizontalStackImages: [UIView]!
-    @IBOutlet var shadowViews: [UIView]!
+    @IBOutlet private var horizontalStackImages: [UIView]!
+    @IBOutlet private var shadowViews: [UIView]!
     @IBOutlet var circleViews: [UIView]!
     @IBOutlet weak private var saldoTextField: UITextField!
     @IBOutlet weak var faturaTextField: UITextField!
-    @IBOutlet var securityTextFields: [UITextField]!
+    @IBOutlet private var securityTextFields: [UITextField]!
     
     //MARK: - IBActions
     @IBAction private func eyeButton(_ sender: Any) {
-        if(showBalance == true) {
+        if showBalance {
             setSecurityTextEntry(true)
         } else {
             setSecurityTextEntry(false)
@@ -148,4 +148,7 @@ final class ViewController: UIViewController, UITabBarDelegate {
     }
     
 }
+
+
+
 

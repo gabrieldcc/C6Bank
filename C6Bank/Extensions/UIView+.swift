@@ -18,8 +18,21 @@ extension UIView {
         layer.rasterizationScale = UIScreen.main.scale
     }
     
+    func turnViewIntoCircle() {
+        layer.cornerRadius = frame.height / 2
+        layer.masksToBounds = true
+    }
     
     
-  
+    func roundUpViews() {
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+    }
+    
 }
+
+
+
+
+
 
