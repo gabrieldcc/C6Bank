@@ -10,6 +10,7 @@ Projeto criado com objetivo de replicar duas telas do app C6Bank.
 Recursos utilzados:
 - Autolayout
 - TableView
+- Tabbar
 - ScrollView
 - Animação de constrainsts
 - UIkit
